@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quran App</title>
+</head>
+<body>
+    <h1>Welcome to the Quran App</h1>
+    <p>Start your journey of interactive Quran learning!</p>
+    <h2>Explore Surahs</h2>
+    <ul>
+        {% for chapter in chapters %}
+        <li>
+            <a href="/surah/{{ chapter['id'] }}">
+                {{ chapter['name_simple'] }} ({{ chapter['translated_name']['name'] }})
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

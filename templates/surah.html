@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ surah.name_simple }}</title>
+</head>
+<body>
+    <h1>{{ surah.name_arabic }}</h1>
+    <h2>{{ surah.name_simple }}</h2>
+    <p>Translation: {{ surah.translated_name.name }}</p>
+    <p>Total Verses: {{ surah.verses_count }}</p>
+    <hr>
+    <h3>Verses:</h3>
+    <ol>
+        {% for verse in verses %}
+        <li>
+        <p><strong>Arabic:</strong> {{ verse.text_uthmani }}</p>
+        <p><strong>Translation:</strong> {{ verse.translation }}</p>
+        </li>
+        {% endfor %}
+    </ol>
+    <a href="/">Go back</a>
+</body>
+</html>
